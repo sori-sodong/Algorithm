@@ -24,19 +24,20 @@
     <body>
         <script>
             function solution(num, ch, arr) {
-                let answer=[];
-                arr.sort((a,b)=>b-a);
+                let answer;
+                let tmp = new Set();
+                //arr.sort((a,b)=>b-a);
                 console.log(arr);
                 for(let i=0; i<num; i++){
                     let sum=0;
-                    for(let j=1; j<num; j++){
-                         for(let k=2; k<num; k++){
-                            sum+=arr[i]+arr[j]+arr[k];
-                            answer.push(sum);
-                            sum=0;
+                    for(let j=i+1; j<num; j++){
+                         for(let k=j+1; k<num; k++){
+                            tmp.add(arr[i]+arr[j]+arr[k]);
                         }
                     }
                 }
+                let a=Array.from(tmp).sort((a,b)=>b-a); //set은 sort가 안되기 떄문에 배열로 바꿔준다.
+                answer=a[ch-1];
                 return answer[ch-1];
             }
 
