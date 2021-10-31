@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(ex) {
+                let answer=[];
+                let lt,rt;
+                for(let x of ex){
+                    if(!isNaN(x)) answer.push(Number(x));
+                    else {
+                        rt=answer.pop();
+                        lt=answer.pop();
+                        if(x==='*') answer.push(lt*rt);
+                        else if(x==='-') answer.push(lt-rt);
+                        else if(x==='+') answer.push(lt+rt);
+                        else if(x==='/') answer.push(lt/rt);
+                    }
+                }
+
+                return Number(answer);
+            }
+
+            let ex="352+*9-";
+            console.log(solution(ex));
+
+        </script>
+    </body>
+</html>
