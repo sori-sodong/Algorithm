@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(ex) {
+                let answer=0;
+                let stack=[];
+                for(let i=0; i<ex.length; i++){
+                    if(ex[i]==='(') stack.push(ex[i]);
+                    else if (ex[i]===')') {
+                        stack.pop(stack[stack.length-1]);
+                        if(ex[i-1]==='(') answer+=stack.length;
+                        else if(ex[i-1]===')') answer+=1;
+                    }
+                }
+
+                return answer;
+            }
+
+            let ex="()(((()())(())()))(())";
+            console.log(solution(ex));
+
+        </script>
+    </body>
+</html>
