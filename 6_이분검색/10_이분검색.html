@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(len, target, arr) {
+                let answer=0;
+                let lt=0, rt=len-1;
+                arr.sort((a,b)=>a-b);
+                console.log(arr, lt, rt, target);
+                for(lt=0; lt<=rt; ){
+                    let mid=parseInt((lt+rt)/2);
+                    console.log(lt, rt, mid);
+                    if(arr[mid]===target) {
+                        answer=mid+1;
+                        return answer;
+                    }
+                    else if(arr[mid]>target){
+                            rt=mid-1;
+                        }
+                    else lt=mid+1;
+                }
+
+                return answer;
+            }
+
+            let arr=[23,87,15,43,65,12,57,32,99,81];
+            console.log(solution(arr.length,32, arr));
+
+        </script>
+    </body>
+</html>
