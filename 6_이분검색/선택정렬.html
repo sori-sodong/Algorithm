@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n,arr) {
+                let answer=[];
+                for(let i=0; i<n; i++){
+                    let idx=i;
+                    for(let j=i+1; j<n; j++){
+                        if(arr[idx]>arr[j]) idx=j;
+                    }
+                    let tmp=arr[i];
+                    arr[i]=arr[idx];
+                    arr[idx]=tmp;
+                    console.log(i, arr);
+                    // [arr[i], arr[idx]]=[arr[idx], arr[i]];
+                }
+                answer=arr;
+                return arr;
+            }
+
+            let arr=[13,5,11,7,23];
+            console.log(solution(arr.length, arr));
+
+        </script>
+    </body>
+</html>
