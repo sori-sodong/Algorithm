@@ -10,7 +10,7 @@
                 let lt=0, rt=len-1;
                 arr.sort((a,b)=>a-b);
                 console.log(arr, lt, rt, target);
-                for(lt=0; lt<=rt; ){
+                while(lt<=rt){
                     let mid=parseInt((lt+rt)/2);
                     console.log(lt, rt, mid);
                     if(arr[mid]===target) {
