@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n,arr) {
+                let answer=arr;
+                for(let i=0; i<n; i++){
+                    for(let j=0; j<n-i; j++){
+                        if(arr[j]>arr[j+1]) [arr[j], arr[j+1]]=[arr[j+1], arr[j]];
+                    }
+                }
+                return arr;
+            }
+
+            let arr=[13,5,11,7,23,15];
+            console.log(solution(arr.length, arr));
+
+        </script>
+    </body>
+</html>
